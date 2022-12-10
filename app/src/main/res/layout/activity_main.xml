@@ -136,4 +136,31 @@
 
         android:src="@drawable/instagram" />
 
+<!--    TODO make a button with a frame -->
+    <Button
+        android:id="@+id/buttonEditProfile"
+        android:layout_width="328dp"
+        android:layout_height="40dp"
+        android:text="Edit profile"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/alabaster"
+        android:layout_marginTop="95dp"
+
+        app:layout_constraintTop_toBottomOf="@id/imageViewLinkedin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonViewMyContacts"
+        android:layout_width="328dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="6dp"
+        android:backgroundTint="@color/orange"
+        android:text="View my contacts"
+        app:layout_constraintTop_toBottomOf="@id/buttonEditProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
