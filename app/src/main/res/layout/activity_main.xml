@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -26,13 +25,13 @@
         app:layout_constraintVertical_weight="0.5" />
 
     <TextView
-        android:id="@+id/textViewSettings"
+        android:id="@+id/text_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/opensans_semi_bold"
-        android:text="Settings"
+        android:text="@string/settings"
 
         android:textColor="@color/alabaster"
         android:textSize="24sp"
@@ -40,14 +39,13 @@
         app:layout_constraintTop_toTopOf="@id/view_top_container" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_picture"
         android:layout_width="113dp"
         android:layout_height="113dp"
 
         android:layout_marginTop="79dp"
 
         android:background="@drawable/picture_background"
-        android:contentDescription="Noname"
         android:scaleType="centerCrop"
         android:src="@drawable/image"
 
@@ -64,13 +62,13 @@
 
         android:layout_marginTop="24dp"
         android:fontFamily="@font/opensans_semi_bold"
-        android:text="Lucile Alvarado"
+        android:text="@string/name"
         android:textColor="@color/alabaster"
 
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+        app:layout_constraintTop_toBottomOf="@id/image_picture" />
 
     <TextView
         android:id="@+id/text_profession"
@@ -79,7 +77,7 @@
 
         android:layout_marginTop="8dp"
         android:fontFamily="@font/opensans_regular"
-        android:text="Graphic designer"
+        android:text="@string/profession"
 
         android:textColor="@color/grey"
         android:textSize="14sp"
@@ -94,7 +92,7 @@
         android:layout_marginTop="16dp"
 
         android:fontFamily="@font/opensans_regular"
-        android:text="5295 Gaylord Walks Apk. 110"
+        android:text="@string/address"
         android:textColor="@color/grey"
 
         android:textSize="14sp"
@@ -103,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@id/text_profession" />
 
     <ImageButton
-        android:id="@+id/imageViewFacebook"
+        android:id="@+id/image_facebook"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="62dp"
@@ -112,12 +110,12 @@
         android:background="@null"
         android:src="@drawable/fb"
 
-        app:layout_constraintEnd_toStartOf="@id/imageViewLinkedin"
+        app:layout_constraintEnd_toStartOf="@id/image_linkedin"
 
         app:layout_constraintTop_toTopOf="@id/view_bottom_container" />
 
     <ImageButton
-        android:id="@+id/imageViewLinkedin"
+        android:id="@+id/image_linkedin"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="62dp"
@@ -130,7 +128,7 @@
         app:layout_constraintTop_toTopOf="@id/view_bottom_container" />
 
     <ImageButton
-        android:id="@+id/imageViewInstagram"
+        android:id="@+id/image_instagram"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -138,43 +136,44 @@
         android:layout_marginTop="62dp"
         android:background="@null"
         android:src="@drawable/instagram"
-        app:layout_constraintStart_toEndOf="@id/imageViewLinkedin"
+        app:layout_constraintStart_toEndOf="@id/image_linkedin"
 
         app:layout_constraintTop_toTopOf="@id/view_bottom_container" />
 
+
     <Button
-        android:id="@+id/buttonEditProfile"
+        android:id="@+id/button_editprofile"
         android:layout_width="328dp"
         android:layout_height="40dp"
         android:layout_marginTop="95dp"
+
+        app:backgroundTint="@null"
         android:background="@drawable/button"
 
-        android:fontFamily="@font/opensans_semi_bold"
-        android:letterSpacing="0"
-        android:lineSpacingExtra="-1sp"
-        android:text="Edit profile"
-        android:textAllCaps="false"
+        android:text="@string/edite_profile"
         android:textColor="@color/black"
+        android:textAppearance="@style/edit_profile"
 
-        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageViewLinkedin" />
+        app:layout_constraintTop_toBottomOf="@id/image_linkedin" />
 
 
     <Button
-        android:id="@+id/buttonViewMyContacts"
+        android:id="@+id/button_viewmycontacts"
         android:layout_width="328dp"
         android:layout_height="55dp"
         android:layout_marginTop="6dp"
+
         android:backgroundTint="@color/orange"
-        android:fontFamily="@font/opensans_regular"
-        android:letterSpacing="0.09"
+
         android:text="@string/view_my_con"
-        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textAppearance="@style/view_my_con"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonEditProfile" />
+        app:layout_constraintTop_toBottomOf="@id/button_editprofile" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
