@@ -5,6 +5,5 @@
     <string name="profession">Graphic designer</string>
     <string name="address">5295 Gaylord Walks Apk. 110</string>
     <string name="edite_profile">Edit profile</string>
-
-    <string name="view_my_con">VIEW my contacts</string>
+    <string name="view_my_contacts">VIEW MY CONTACTS</string>
 </resources>

@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="View">
+    <style name="viewLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
     </style>
@@ -31,10 +31,56 @@
         <item name="android:textColor">@color/alabaster</item>
         <item name="android:textSize">24sp</item>
     </style>
-    
-    <style name="imageLayout"></style>
 
-    <style name="edit_profile">
+    <style name="imageLayout">
+        <item name="android:layout_width">113dp</item>
+        <item name="android:layout_height">113dp</item>
+        <item name="android:layout_marginTop">79dp</item>
+    </style>
+
+    <style name="nameLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+    </style>
+
+    <style name="nameTextAppearance">
+        <item name="android:fontFamily">@font/opensans_semi_bold</item>
+        <item name="android:textColor">@color/alabaster</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="professionLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="h3TextAppearance">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <style name="addressLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="socialMediaLayout">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginTop">62dp</item>
+    </style>
+
+    <style name="edit_profileLayout">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">328dp</item>
+        <item name="android:layout_marginTop">95dp</item>
+    </style>
+
+    <style name="edit_profileTextAppearance">
         <item name="android:fontFamily">@font/opensans_semi_bold</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:lineSpacingExtra">-1sp</item>
@@ -42,7 +88,14 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="view_my_con">
+    <style name="view_my_contactsLayout">
+        <item name="android:layout_width">328dp</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+
+    </style>
+
+    <style name="view_my_contactsTextAppearance">
         <item name="android:textSize">16sp</item>
         <item name="android:letterSpacing">0.09</item>
         <item name="android:fontFamily">@font/opensans_semi_bold</item>
