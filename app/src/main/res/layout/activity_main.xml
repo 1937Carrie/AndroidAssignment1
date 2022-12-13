@@ -113,7 +113,6 @@
         android:contentDescription="LinkedIn icon"
         android:src="@drawable/linkedin"
 
-
         app:layout_constraintEnd_toEndOf="@id/view_bottom_container"
         app:layout_constraintStart_toStartOf="@id/view_bottom_container"
         app:layout_constraintTop_toTopOf="@id/view_bottom_container" />
@@ -137,8 +136,8 @@
         style="@style/edit_profileLayout"
 
         android:background="@drawable/button"
-        android:text="@string/edite_profile"
         android:onClick="onClickEditProfile"
+        android:text="@string/edite_profile"
 
         android:textAppearance="@style/edit_profileTextAppearance"
         android:textColor="@color/black"
