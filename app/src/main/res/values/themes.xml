@@ -14,6 +14,25 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="View">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="settingsLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="settingsTextAppearance">
+        <item name="android:fontFamily">@font/opensans_semi_bold</item>
+        <item name="android:textColor">@color/alabaster</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    
+    <style name="imageLayout"></style>
 
     <style name="edit_profile">
         <item name="android:fontFamily">@font/opensans_semi_bold</item>
