@@ -114,8 +114,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
 
-        android:checked="true"
         android:backgroundTint="@color/orange"
+        android:checked="true"
         android:lineSpacingExtra="-1sp"
         android:text="@string/remember_me"
         android:textColor="@color/B2B2B3"
@@ -139,7 +139,7 @@
         app:layout_constraintTop_toBottomOf="@id/checkBox" />
 
     <TextView
-        android:id="@+id/or"
+        android:id="@+id/text_or"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -155,6 +155,7 @@
         app:layout_constraintTop_toBottomOf="@id/sign_in_button" />
 
     <Button
+        android:id="@+id/button_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -170,6 +171,46 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/or" />
+        app:layout_constraintTop_toBottomOf="@id/text_or" />
+
+    <TextView
+        android:id="@+id/termAndCondition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/opensans_regular"
+
+        android:gravity="center"
+        android:lineSpacingExtra="-1sp"
+        android:text="@string/by_clicking"
+        android:textColor="@color/alabaster"
+        android:textSize="12sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_register" />
+
+    <View
+        android:id="@+id/view_already_have_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/termAndCondition"
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+
+        android:gravity="center"
+        android:text="@string/already_hav"
+        android:textColor="@color/B2B2B3"
+        android:textSize="14sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_already_have_account" />
+    />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
