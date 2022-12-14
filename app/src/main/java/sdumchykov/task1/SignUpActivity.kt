@@ -12,9 +12,9 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        val signInButton: SignInButton = findViewById(R.id.sign_in_button)
+//        val signInButton: SignInButton = findViewById(R.id.sign_in_button)
 
-        setGooglePlusButtonText(signInButton, "GOOGLE")
+//        setGooglePlusButtonText(signInButton, "GOOGLE")
 
     }
 

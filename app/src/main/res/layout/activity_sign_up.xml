@@ -48,7 +48,7 @@
         android:fontFamily="@font/opensans_semi_bold"
         android:lineSpacingExtra="-1sp"
         android:text="@string/email"
-        android:textColor="@color/BDBDBD"
+        android:textColor="@color/col_bdbdbd"
         android:textSize="14sp"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
         android:fontFamily="@font/opensans_semi_bold"
         android:lineSpacingExtra="-1sp"
         android:text="@string/password"
-        android:textColor="@color/BDBDBD"
+        android:textColor="@color/col_bdbdbd"
         android:textSize="14sp"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -118,23 +118,27 @@
         android:checked="true"
         android:lineSpacingExtra="-1sp"
         android:text="@string/remember_me"
-        android:textColor="@color/B2B2B3"
+        android:textColor="@color/col_b2b2b3"
         android:textSize="14sp"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
 
-    <com.google.android.gms.common.SignInButton
+    <Button
         android:id="@+id/sign_in_button"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="67dp"
         android:layout_marginEnd="16dp"
 
-        app:buttonSize="wide"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/google_logo"
+        android:fontFamily="@font/opensans_semi_bold"
+        android:text="@string/google"
+        android:textColor="@color/black"
 
-
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/checkBox" />
 
@@ -192,12 +196,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_register" />
 
-    <View
-        android:id="@+id/view_already_have_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/termAndCondition"
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -205,12 +203,10 @@
 
         android:gravity="center"
         android:text="@string/already_hav"
-        android:textColor="@color/B2B2B3"
+        android:textColor="@color/col_b2b2b3"
         android:textSize="14sp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/view_already_have_account" />
-    />
-
+        app:layout_constraintTop_toBottomOf="@id/termAndCondition" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
