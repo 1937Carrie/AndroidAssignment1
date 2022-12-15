@@ -15,6 +15,7 @@
         android:fontFamily="@font/opensans_semi_bold"
         android:lineSpacingExtra="-1sp"
         android:text="@string/let_s_get_a"
+        android:textAlignment="center"
         android:textColor="@color/alabaster"
         android:textSize="24sp"
 
@@ -31,6 +32,7 @@
         android:fontFamily="@font/opensans_regular"
         android:lineSpacingExtra="-1sp"
         android:text="@string/type_15"
+        android:textAlignment="center"
         android:textColor="@color/alabaster"
         android:textSize="14sp"
 
@@ -70,9 +72,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint"
             android:inputType="textEmailAddress"
-            android:singleLine="true" />
+            android:singleLine="true"
+            app:hintEnabled="false" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -107,9 +109,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint"
             android:inputType="textPassword"
-            android:singleLine="true" />
+            android:singleLine="true"
+            app:hintEnabled="false" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
@@ -154,6 +156,7 @@
         android:fontFamily="@font/opensans_semi_bold"
         android:lineSpacingExtra="-1sp"
         android:text="@string/or"
+        android:textAlignment="center"
         android:textColor="@color/alabaster"
         android:textSize="18sp"
 
@@ -189,9 +192,9 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/opensans_regular"
 
-        android:gravity="center"
         android:lineSpacingExtra="-1sp"
         android:text="@string/by_clicking"
+        android:textAlignment="center"
         android:textColor="@color/alabaster"
         android:textSize="12sp"
 
@@ -221,9 +224,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:textAlignment="center"
-
         android:text="Sign in"
+
+        android:textAlignment="center"
         android:textColor="@color/alabaster"
 
         app:layout_constraintEnd_toEndOf="@+id/termAndCondition"
