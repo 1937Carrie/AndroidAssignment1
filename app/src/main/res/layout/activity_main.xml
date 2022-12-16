@@ -135,8 +135,7 @@
         android:id="@+id/button_editprofile"
         style="@style/edit_profileLayout"
 
-        android:background="@drawable/button_pressed"
-        android:onClick="onClickEditProfile"
+        android:background="@drawable/selector_xml_name"
         android:text="@string/edite_profile"
 
         android:textAppearance="@style/edit_profileTextAppearance"

@@ -1,8 +1,10 @@
 package sdumchykov.task1
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
@@ -54,5 +56,15 @@ class SignUpActivity : AppCompatActivity() {
         textInputEmail.addTextChangedListener(watcher)
         val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
         textInputPassword.addTextChangedListener(watcher)
+
+        buttonRegister.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("email", textInputEmail.text.toString())
+            startActivity(intent)
+        }
+    }
+
+    fun onClickRegister(view: View) {
+
     }
 }
