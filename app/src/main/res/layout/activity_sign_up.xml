@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/steel_gray">
 
 
     <TextView
-        android:id="@+id/text_let_s_get_a"
+        android:id="@+id/textViewLetsGetAcquainted"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="146dp"
@@ -24,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/type_15"
+        android:id="@+id/textViewFillOutProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -38,10 +39,10 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_let_s_get_a" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLetsGetAcquainted" />
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -54,31 +55,25 @@
         android:textSize="14sp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/type_15" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewFillOutProfile" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:backgroundTint="@color/orange"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeColor="@color/selector_stroke_color"
+
+        android:backgroundTint="@color/col_bdbdbd"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/alabaster"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:singleLine="true"
-            app:hintEnabled="false" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
     <TextView
-        android:id="@+id/password"
+        android:id="@+id/textViewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -93,45 +88,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:backgroundTint="@color/orange"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeColor="@color/selector_stroke_color"
+
+        android:backgroundTint="@color/col_bdbdbd"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="@color/alabaster"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password">
+        app:layout_constraintTop_toBottomOf="@id/textViewPassword" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:singleLine="true"
-            app:hintEnabled="false" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxRememberMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
 
         android:backgroundTint="@color/orange"
+        android:buttonTint="@color/alabaster"
+        android:button="@drawable/checkbox"
         android:checked="true"
         android:lineSpacingExtra="-1sp"
         android:text="@string/remember_me"
         android:textColor="@color/col_b2b2b3"
         android:textSize="14sp"
+        android:paddingStart="8dp"
 
         app:layout_constraintStart_toStartOf="@id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@id/editTextTextPassword"
+        tools:ignore="RtlSymmetry" />
 
     <Button
-        android:id="@+id/sign_in_button"
+        android:id="@+id/buttonSignInWithGoogle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -145,10 +139,10 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@id/checkBoxRememberMe" />
 
     <TextView
-        android:id="@+id/text_or"
+        android:id="@+id/textViewOr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -162,10 +156,10 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sign_in_button" />
+        app:layout_constraintTop_toBottomOf="@id/buttonSignInWithGoogle" />
 
     <Button
-        android:id="@+id/button_register"
+        android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -181,10 +175,10 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_or" />
+        app:layout_constraintTop_toBottomOf="@id/textViewOr" />
 
     <TextView
-        android:id="@+id/termAndCondition"
+        android:id="@+id/textViewTermAndCondition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -200,37 +194,39 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_register" />
+        app:layout_constraintTop_toBottomOf="@id/buttonRegister" />
 
     <TextView
-        android:id="@+id/text_already_have_account"
+        android:id="@+id/textViewAlreadyHaveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
 
+        android:fontFamily="@font/opensans_semi_bold"
         android:gravity="center"
         android:text="@string/already_hav"
         android:textAlignment="center"
         android:textColor="@color/col_b2b2b3"
         android:textSize="14sp"
 
-        app:layout_constraintEnd_toStartOf="@id/text_sign_in"
+        app:layout_constraintEnd_toStartOf="@id/textViewSignIn"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/termAndCondition" />
+        app:layout_constraintTop_toBottomOf="@id/textViewTermAndCondition" />
 
     <TextView
-        android:id="@+id/text_sign_in"
+        android:id="@+id/textViewSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:fontFamily="@font/opensans_semi_bold"
+
         android:text="Sign in"
-
         android:textAlignment="center"
-        android:textColor="@color/alabaster"
+        android:textColor="@color/white"
 
-        app:layout_constraintEnd_toEndOf="@+id/termAndCondition"
-        app:layout_constraintStart_toEndOf="@id/text_already_have_account"
-        app:layout_constraintTop_toTopOf="@id/text_already_have_account" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewTermAndCondition"
+        app:layout_constraintStart_toEndOf="@id/textViewAlreadyHaveAccount"
+        app:layout_constraintTop_toTopOf="@id/textViewAlreadyHaveAccount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
