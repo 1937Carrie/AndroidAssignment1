@@ -1,31 +1,58 @@
 package sdumchykov.task1
 
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.common.SignInButton
+import com.google.android.material.textfield.TextInputEditText
 
 
 class SignUpActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+    private val watcher: TextWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
-//        val signInButton: SignInButton = findViewById(R.id.sign_in_button)
+        }
 
-//        setGooglePlusButtonText(signInButton, "GOOGLE")
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
+        }
+
+        override fun afterTextChanged(s: Editable?) {
+            val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
+
+            val lessThanEightSymbols = textInputPassword.text?.length!! < 8
+            val notContainsDigits = !textInputPassword.text?.contains(Regex("\\d"))!!
+            val notContainsCharacters = !textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
+
+            if (lessThanEightSymbols || notContainsDigits || notContainsCharacters) {
+                textInputPassword.error = "Enter valid password"
+            }
+
+            val textInputEmail = findViewById<TextInputEditText>(R.id.textInputEmail)
+            if (!textInputEmail.text?.contains(Regex(".+@.+\\..+"))!!) {
+                textInputEmail.error = "Enter valid email"
+            }
+
+            if (textInputEmail.error.isNullOrBlank() && textInputPassword.error.isNullOrBlank()) {
+                val buttonRegister = findViewById<Button>(R.id.buttonRegister)
+                buttonRegister.isEnabled = true
+            }
+
+        }
     }
 
-    private fun setGooglePlusButtonText(signInButton: SignInButton, buttonText: String) {
-        for (i in 0 until signInButton.childCount) {
-            val v: View = signInButton.getChildAt(i)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-            if (v is TextView) {
-                v.text = buttonText
-                return
-            }
-        }
+        setContentView(R.layout.activity_sign_up)
+
+        val buttonRegister = findViewById<Button>(R.id.buttonRegister)
+        buttonRegister.isEnabled = false
+
+        val textInputEmail = findViewById<TextInputEditText>(R.id.textInputEmail)
+        textInputEmail.addTextChangedListener(watcher)
+        val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
+        textInputPassword.addTextChangedListener(watcher)
     }
 }

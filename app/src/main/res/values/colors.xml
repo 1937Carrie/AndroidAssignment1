@@ -14,4 +14,6 @@
     <color name="col_bdbdbd">#BDBDBD</color>
     <color name="col_b2b2b3">#B2B2B3</color>
     <color name="col_18181f">#18181F</color>
+    <color name="half_transparent_blue">#4000ADEF</color>
+    <color name="half_transparent_grey">#1A808080</color>
 </resources>

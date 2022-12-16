@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/steel_gray">
 
-
     <TextView
         android:id="@+id/textViewLetsGetAcquainted"
         android:layout_width="wrap_content"
@@ -57,20 +56,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewFillOutProfile" />
 
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
 
-        android:backgroundTint="@color/col_bdbdbd"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/alabaster"
+        android:theme="@style/ThemeOverlay.App.TextInputLayout"
+        app:errorEnabled="true"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+
+            android:inputType="textEmailAddress"
+            android:textColor="@color/alabaster"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textViewPassword"
@@ -86,23 +95,32 @@
         android:textSize="14sp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail" />
 
-    <EditText
-        android:id="@+id/editTextTextPassword"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
 
-        android:backgroundTint="@color/col_bdbdbd"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textColor="@color/alabaster"
+        android:theme="@style/ThemeOverlay.App.TextInputLayout"
+        app:errorEnabled="true"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewPassword" />
+        app:layout_constraintTop_toBottomOf="@id/textViewPassword">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+
+            android:inputType="textPassword"
+            android:textColor="@color/alabaster"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/checkBoxRememberMe"
@@ -111,17 +129,17 @@
         android:layout_marginTop="18dp"
 
         android:backgroundTint="@color/orange"
-        android:buttonTint="@color/alabaster"
         android:button="@drawable/checkbox"
+        android:buttonTint="@color/alabaster"
         android:checked="true"
         android:lineSpacingExtra="-1sp"
+        android:paddingStart="8dp"
         android:text="@string/remember_me"
         android:textColor="@color/col_b2b2b3"
         android:textSize="14sp"
-        android:paddingStart="8dp"
 
-        app:layout_constraintStart_toStartOf="@id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@id/editTextTextPassword"
+        app:layout_constraintStart_toStartOf="@id/textInputLayoutPassword"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword"
         tools:ignore="RtlSymmetry" />
 
     <Button
@@ -166,12 +184,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
 
-        android:background="@drawable/register_button"
-
+        android:background="@drawable/selector_xml_name"
+        app:backgroundTint="@null"
         android:text="@string/register"
+
         android:textColor="@color/alabaster"
         android:textSize="16sp"
-        app:backgroundTint="@null"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
