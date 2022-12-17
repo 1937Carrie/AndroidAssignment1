@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
@@ -17,10 +16,6 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
-        }
-
-        override fun afterTextChanged(s: Editable?) {
             val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
 
             val lessThanEightSymbols = textInputPassword.text?.length!! < 8
@@ -29,17 +24,27 @@ class SignUpActivity : AppCompatActivity() {
 
             if (lessThanEightSymbols || notContainsDigits || notContainsCharacters) {
                 textInputPassword.error = "Enter valid password"
+            } else {
+                textInputPassword.error = null
             }
 
             val textInputEmail = findViewById<TextInputEditText>(R.id.textInputEmail)
+
             if (!textInputEmail.text?.contains(Regex(".+@.+\\..+"))!!) {
                 textInputEmail.error = "Enter valid email"
+            } else {
+                textInputEmail.error = null
             }
 
-            if (textInputEmail.error.isNullOrBlank() && textInputPassword.error.isNullOrBlank()) {
-                val buttonRegister = findViewById<Button>(R.id.buttonRegister)
-                buttonRegister.isEnabled = true
-            }
+            val buttonRegister = findViewById<Button>(R.id.buttonRegister)
+
+            val emailError = textInputEmail.error.isNullOrEmpty()
+            val passwordError = textInputPassword.error.isNullOrEmpty()
+
+            buttonRegister.isEnabled = emailError && passwordError
+        }
+
+        override fun afterTextChanged(s: Editable?) {
 
         }
     }
@@ -62,9 +67,5 @@ class SignUpActivity : AppCompatActivity() {
             intent.putExtra("email", textInputEmail.text.toString())
             startActivity(intent)
         }
-    }
-
-    fun onClickRegister(view: View) {
-
     }
 }

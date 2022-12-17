@@ -1,19 +1,11 @@
 package sdumchykov.task1
 
-import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
-import android.view.View
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import java.util.*
-import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
-    private var stockBackground = true
-    private var maestroCounter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,11 +13,16 @@ class MainActivity : AppCompatActivity() {
 
         val signupEmail = intent.getStringExtra("email")
         val textName = findViewById<TextView>(R.id.text_name)
-        val splitted = signupEmail?.split(Regex("\\W"))
-        val firstName = splitted?.get(0)?.replaceFirstChar { it.uppercase() }
-        val secondName = splitted?.get(1)?.replaceFirstChar { it.uppercase() }
+        val splitted = signupEmail?.substring(0, signupEmail.indexOf('@'))?.split(Regex("\\W"))
 
-        textName.setText("$firstName $secondName")
+        if (splitted?.size!! > 1) {
+            val firstName = splitted[0].replaceFirstChar { it.uppercase() }
+            val secondName = splitted[1].replaceFirstChar { it.uppercase() }
+
+            textName.text = "$firstName $secondName"
+        } else {
+            textName.text = signupEmail.substring(0, signupEmail.indexOf('@'))
+        }
     }
 
 }
