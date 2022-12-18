@@ -1,17 +1,26 @@
 package sdumchykov.task1
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Gravity
 import android.widget.Button
+import android.widget.CheckBox
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 
 
 class SignUpActivity : AppCompatActivity() {
     private val watcher: TextWatcher = object : TextWatcher {
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        override fun beforeTextChanged(
+            s: CharSequence?,
+            start: Int,
+            count: Int,
+            after: Int
+        ) {
 
         }
 
@@ -20,7 +29,8 @@ class SignUpActivity : AppCompatActivity() {
 
             val lessThanEightSymbols = textInputPassword.text?.length!! < 8
             val notContainsDigits = !textInputPassword.text?.contains(Regex("\\d"))!!
-            val notContainsCharacters = !textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
+            val notContainsCharacters =
+                !textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
 
             if (lessThanEightSymbols || notContainsDigits || notContainsCharacters) {
                 textInputPassword.error = "Enter valid password"
@@ -54,6 +64,7 @@ class SignUpActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_sign_up)
 
+
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
         buttonRegister.isEnabled = false
 
@@ -63,9 +74,39 @@ class SignUpActivity : AppCompatActivity() {
         textInputPassword.addTextChangedListener(watcher)
 
         buttonRegister.setOnClickListener {
+            if (findViewById<CheckBox>(R.id.checkBoxRememberMe).isChecked) {
+                val pref = getPreferences(Context.MODE_PRIVATE)
+                val editor = pref.edit()
+
+                editor.putString("Email", textInputEmail.text.toString())
+                editor.putString("Password", textInputPassword.text.toString())
+
+                editor.apply()
+
+                val toast = Toast.makeText(
+                    applicationContext,
+                    "${pref.getString("Email", "Not found")}\n" +
+                            "${pref.getString("Password", "Not found")}", Toast.LENGTH_LONG
+                )
+                toast.setGravity(Gravity.TOP, 0, 140)
+                toast.show()
+            }
+
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("email", textInputEmail.text.toString())
             startActivity(intent)
+        }
+
+        val pref = getPreferences(Context.MODE_PRIVATE)
+
+        if (pref.getString("Email", "")?.length!! > 0) {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+
+            intent.putExtra("email", pref.getString("Email", ""))
+            startActivity(intent)
+            finish()
         }
     }
 }
