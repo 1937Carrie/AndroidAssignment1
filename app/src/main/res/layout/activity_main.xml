@@ -11,7 +11,7 @@
 
         style="@style/viewLayout"
 
-        android:background="@color/steel_gray"
+        android:background="@color/background"
 
         app:layout_constraintBottom_toTopOf="@id/view_bottom_container"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
 
         style="@style/viewLayout"
 
-        android:background="@color/alabaster"
+        android:background="@color/bottomViewColor"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,7 +139,7 @@
         android:text="@string/edite_profile"
 
         android:textAppearance="@style/edit_profileTextAppearance"
-        android:textColor="@color/black"
+        android:textColor="@color/buttonEditProfileTextColor"
         app:backgroundTint="@null"
 
         app:layout_constraintEnd_toEndOf="parent"

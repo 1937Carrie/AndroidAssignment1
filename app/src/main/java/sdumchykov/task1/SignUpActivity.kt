@@ -3,6 +3,7 @@ package sdumchykov.task1
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.Gravity
@@ -108,5 +109,21 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        if (savedInstanceState != null) {
+            textInputEmail.setText(savedInstanceState.getString("email"))
+            textInputPassword.setText(savedInstanceState.getString("password"))
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+
+        val textInputEmail = findViewById<TextInputEditText>(R.id.textInputEmail)
+        val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
+
+        outState.putString("email", textInputEmail.text.toString())
+        outState.putString("password", textInputPassword.text.toString())
+
     }
 }
