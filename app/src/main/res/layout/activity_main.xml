@@ -118,7 +118,7 @@
         app:layout_constraintTop_toTopOf="@id/view_bottom_container" />
 
     <ImageButton
-        android:id="@+id/image_instagram"
+        android:id="@+id/imageInstagram"
         style="@style/socialMediaLayout"
 
         android:layout_marginStart="32dp"

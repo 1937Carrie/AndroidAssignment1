@@ -1,6 +1,9 @@
 package sdumchykov.task1
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -22,6 +25,11 @@ class MainActivity : AppCompatActivity() {
             textName.text = "$firstName $secondName"
         } else {
             textName.text = signupEmail.substring(0, signupEmail.indexOf('@'))
+        }
+
+        val imgButtonInstagram = findViewById<ImageButton>(R.id.imageInstagram)
+        imgButtonInstagram.setOnClickListener{
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/p/BDdr32ZrvgP/")))
         }
     }
 
