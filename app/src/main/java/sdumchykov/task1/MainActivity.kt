@@ -14,6 +14,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setTextToTextName()
+        setURIToImageInstagram()
+    }
+
+    private fun setURIToImageInstagram() {
+        val imgButtonInstagram = findViewById<ImageButton>(R.id.imageInstagram)
+
+        imgButtonInstagram.setOnClickListener {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://www.instagram.com/p/BDdr32ZrvgP/")
+                )
+            )
+        }
+    }
+
+    private fun setTextToTextName() {
         val signupEmail = intent.getStringExtra("email")
         val textName = findViewById<TextView>(R.id.text_name)
         val splitted = signupEmail?.substring(0, signupEmail.indexOf('@'))?.split(Regex("\\W"))
@@ -25,11 +43,6 @@ class MainActivity : AppCompatActivity() {
             textName.text = "$firstName $secondName"
         } else {
             textName.text = signupEmail.substring(0, signupEmail.indexOf('@'))
-        }
-
-        val imgButtonInstagram = findViewById<ImageButton>(R.id.imageInstagram)
-        imgButtonInstagram.setOnClickListener{
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/p/BDdr32ZrvgP/")))
         }
     }
 

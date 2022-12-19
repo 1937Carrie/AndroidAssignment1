@@ -26,6 +26,10 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+        }
+
+        override fun afterTextChanged(s: Editable?) {
             val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
 
             val lessThanEightSymbols = textInputPassword.text?.length!! < 8
@@ -54,29 +58,53 @@ class SignUpActivity : AppCompatActivity() {
 
             buttonRegister.isEnabled = emailError && passwordError
         }
-
-        override fun afterTextChanged(s: Editable?) {
-
-        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_sign_up)
 
-
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
-        buttonRegister.isEnabled = false
+        buttonRegisterDisable(buttonRegister)
 
         val textInputEmail = findViewById<TextInputEditText>(R.id.textInputEmail)
-        textInputEmail.addTextChangedListener(watcher)
+        textInputAddTextChangedListener(textInputEmail)
         val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
-        textInputPassword.addTextChangedListener(watcher)
+        textInputAddTextChangedListener(textInputPassword)
 
+        buttonRegisterSetOnClickListener(buttonRegister, textInputEmail, textInputPassword)
+
+        startMainActivity()
+
+        if (savedInstanceState != null) {
+            textInputEmail.setText(savedInstanceState.getString("email"))
+            textInputPassword.setText(savedInstanceState.getString("password"))
+        }
+    }
+
+    private fun startMainActivity() {
+        val pref = getPreferences(MODE_PRIVATE)
+
+        if (pref.getString("Email", "")?.length!! > 0) {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+
+            intent.putExtra("email", pref.getString("Email", ""))
+
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun buttonRegisterSetOnClickListener(
+        buttonRegister: Button,
+        textInputEmail: TextInputEditText,
+        textInputPassword: TextInputEditText
+    ) {
         buttonRegister.setOnClickListener {
             if (findViewById<CheckBox>(R.id.checkBoxRememberMe).isChecked) {
-                val pref = getPreferences(Context.MODE_PRIVATE)
+                val pref = getPreferences(MODE_PRIVATE)
                 val editor = pref.edit()
 
                 editor.putString("Email", textInputEmail.text.toString())
@@ -97,23 +125,14 @@ class SignUpActivity : AppCompatActivity() {
             intent.putExtra("email", textInputEmail.text.toString())
             startActivity(intent)
         }
+    }
 
-        val pref = getPreferences(Context.MODE_PRIVATE)
+    private fun textInputAddTextChangedListener(textInputEmail: TextInputEditText) {
+        textInputEmail.addTextChangedListener(watcher)
+    }
 
-        if (pref.getString("Email", "")?.length!! > 0) {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-
-            intent.putExtra("email", pref.getString("Email", ""))
-            startActivity(intent)
-            finish()
-        }
-
-        if (savedInstanceState != null) {
-            textInputEmail.setText(savedInstanceState.getString("email"))
-            textInputPassword.setText(savedInstanceState.getString("password"))
-        }
+    private fun buttonRegisterDisable(buttonRegister: Button) {
+        buttonRegister.isEnabled = false
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
