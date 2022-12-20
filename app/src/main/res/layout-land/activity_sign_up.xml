@@ -9,20 +9,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background">
+        android:background="@color/topViewColor">
 
         <TextView
             android:id="@+id/textViewLetsGetAcquainted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/widthHeightIsWrapContent"
             android:layout_marginTop="64dp"
 
-            android:fontFamily="@font/opensans_semi_bold"
-            android:lineSpacingExtra="-1sp"
             android:text="@string/let_s_get_a"
             android:textAlignment="center"
-            android:textColor="@color/alabaster"
-            android:textSize="24sp"
+            android:textAppearance="@style/textViewLetsGetAcquaintedTextAppearance"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,12 +30,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
 
-            android:fontFamily="@font/opensans_regular"
-            android:lineSpacingExtra="-1sp"
             android:text="@string/type_15"
             android:textAlignment="center"
-            android:textColor="@color/alabaster"
-            android:textSize="14sp"
+            android:textAppearance="@style/textViewLFillOutTextAppearance"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,16 +40,12 @@
 
         <TextView
             android:id="@+id/textViewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/widthHeightIsWrapContent"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
 
-            android:fontFamily="@font/opensans_semi_bold"
-            android:lineSpacingExtra="-1sp"
             android:text="@string/email"
-            android:textColor="@color/col_bdbdbd"
-            android:textSize="14sp"
+            android:textAppearance="@style/textViewEmailTextAppearance"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewFillOutProfile" />
@@ -88,16 +77,12 @@
 
         <TextView
             android:id="@+id/textViewPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/widthHeightIsWrapContent"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
 
-            android:fontFamily="@font/opensans_semi_bold"
-            android:lineSpacingExtra="-1sp"
             android:text="@string/password"
-            android:textColor="@color/col_bdbdbd"
-            android:textSize="14sp"
+            android:textAppearance="@style/textViewEmailTextAppearance"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail" />
@@ -129,19 +114,17 @@
 
         <CheckBox
             android:id="@+id/checkBoxRememberMe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/widthHeightIsWrapContent"
             android:layout_marginTop="18dp"
 
             android:backgroundTint="@color/orange"
             android:button="@drawable/checkbox"
             android:buttonTint="@color/alabaster"
             android:checked="true"
-            android:lineSpacingExtra="-1sp"
             android:paddingStart="8dp"
             android:text="@string/remember_me"
+            android:textAppearance="@style/checkBoxRememberMeTextAppearance"
             android:textColor="@color/col_b2b2b3"
-            android:textSize="14sp"
 
             app:layout_constraintStart_toStartOf="@id/textInputLayoutPassword"
             app:layout_constraintTop_toBottomOf="@id/textInputLayoutPassword"
@@ -154,13 +137,13 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
 
-            android:letterSpacing="0"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/opensans_semi_bold"
             android:insetLeft="0dp"
             android:insetTop="0dp"
             android:insetRight="0dp"
             android:insetBottom="0dp"
+            android:letterSpacing="0"
 
             android:text="@string/google"
             android:textColor="@color/black"
@@ -175,16 +158,12 @@
 
         <TextView
             android:id="@+id/textViewOr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/widthHeightIsWrapContent"
             android:layout_marginTop="8dp"
 
-            android:fontFamily="@font/opensans_semi_bold"
-            android:lineSpacingExtra="-1sp"
             android:text="@string/or"
             android:textAlignment="center"
-            android:textColor="@color/alabaster"
-            android:textSize="18sp"
+            android:textAppearance="@style/textViewOrTextAppearance"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -217,12 +196,10 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/opensans_regular"
-
-            android:lineSpacingExtra="-1sp"
             android:text="@string/by_clicking"
+
             android:textAlignment="center"
-            android:textColor="@color/alabaster"
-            android:textSize="12sp"
+            android:textAppearance="@style/textViewTermAndConditionTextAppearance"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -254,7 +231,7 @@
             android:layout_marginStart="12dp"
 
             android:fontFamily="@font/opensans_semi_bold"
-            android:text="Sign in"
+            android:text="@string/sign_in"
             android:textAlignment="center"
             android:textColor="@color/white"
 

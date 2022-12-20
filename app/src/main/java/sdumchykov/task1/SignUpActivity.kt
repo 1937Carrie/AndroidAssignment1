@@ -24,11 +24,6 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
-        }
-
-        override fun afterTextChanged(s: Editable?) {
-
             val lessThanEightSymbols = binding.textInputPassword.text?.length!! < 8
             val notContainsDigits = !binding.textInputPassword.text?.contains(Regex("\\d"))!!
             val notContainsCharacters =
@@ -50,6 +45,10 @@ class SignUpActivity : AppCompatActivity() {
             val passwordError = binding.textInputPassword.error.isNullOrEmpty()
 
             binding.buttonRegister.isEnabled = emailError && passwordError
+        }
+
+        override fun afterTextChanged(s: Editable?) {
+
         }
     }
 

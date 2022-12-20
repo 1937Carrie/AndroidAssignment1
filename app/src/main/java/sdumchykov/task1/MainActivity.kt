@@ -37,9 +37,9 @@ class MainActivity : AppCompatActivity() {
             val firstName = splitted[0].replaceFirstChar { it.uppercase() }
             val secondName = splitted[1].replaceFirstChar { it.uppercase() }
 
-            binding.textName.text = "$firstName $secondName"
+            binding.textViewName.text = "$firstName $secondName"
         } else {
-            binding.textName.text = signupEmail.substring(0, signupEmail.indexOf('@'))
+            binding.textViewName.text = signupEmail.substring(0, signupEmail.indexOf('@'))
         }
     }
 

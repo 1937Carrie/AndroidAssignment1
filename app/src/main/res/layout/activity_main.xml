@@ -7,46 +7,46 @@
     tools:context=".MainActivity">
 
     <View
-        android:id="@+id/view_top_container"
+        android:id="@+id/viewTopContainer"
 
-        style="@style/viewLayout"
+        style="@style/viewStyle"
 
         android:background="@color/topViewColor"
 
-        app:layout_constraintBottom_toTopOf="@id/view_bottom_container"
+        app:layout_constraintBottom_toTopOf="@id/viewBottomContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_weight="0.5" />
 
     <View
-        android:id="@+id/view_bottom_container"
+        android:id="@+id/viewBottomContainer"
 
-        style="@style/viewLayout"
+        style="@style/viewStyle"
 
         android:background="@color/bottomViewColor"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_top_container"
+        app:layout_constraintTop_toBottomOf="@id/viewTopContainer"
         app:layout_constraintVertical_weight="0.5" />
 
     <TextView
-        android:id="@+id/text_settings"
+        android:id="@+id/textViewSettings"
 
-        style="@style/settingsLayout"
+        style="@style/textViewSettingsStyle"
 
         android:text="@string/settings"
-        android:textAppearance="@style/settingsTextAppearance"
+        android:textAppearance="@style/textViewSettingsTextAppearance"
 
-        app:layout_constraintStart_toStartOf="@id/view_top_container"
-        app:layout_constraintTop_toTopOf="@id/view_top_container" />
+        app:layout_constraintStart_toStartOf="@id/viewTopContainer"
+        app:layout_constraintTop_toTopOf="@id/viewTopContainer" />
 
     <ImageView
-        android:id="@+id/image_picture"
+        android:id="@+id/imageViewPicture"
 
-        style="@style/imageLayout"
+        style="@style/imageViewPictureStyle"
 
         android:contentDescription="Profile image"
         android:scaleType="centerCrop"
@@ -57,42 +57,43 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_name"
+        android:id="@+id/textViewName"
 
-        style="@style/nameLayout"
+        style="@style/textViewNameStyle"
 
         android:text="@string/name"
         android:textAppearance="@style/nameTextAppearance"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_picture" />
+        app:layout_constraintTop_toBottomOf="@id/imageViewPicture" />
 
     <TextView
-        android:id="@+id/text_profession"
+        android:id="@+id/textViewProfession"
 
-        style="@style/professionLayout"
+        style="@style/textViewProfessionStyle"
 
         android:text="@string/profession"
-        android:textAppearance="@style/h3TextAppearance"
+        android:textAppearance="@style/additionalTextAppearance"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_name" />
+        app:layout_constraintTop_toBottomOf="@id/textViewName" />
 
     <TextView
-        android:id="@+id/text_address"
-        style="@style/addressLayout"
+        android:id="@+id/textViewAddress"
+
+        style="@style/textViewAddressStyle"
 
         android:text="@string/address"
-        android:textAppearance="@style/h3TextAppearance"
+        android:textAppearance="@style/additionalTextAppearance"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_profession" />
+        app:layout_constraintTop_toBottomOf="@id/textViewProfession" />
 
     <ImageButton
-        android:id="@+id/image_facebook"
+        android:id="@+id/imageViewFacebook"
 
         style="@style/socialMediaLayout"
         android:layout_marginEnd="32dp"
@@ -102,20 +103,20 @@
         android:contentDescription="Facebook icon"
         android:src="@drawable/fb"
 
-        app:layout_constraintEnd_toStartOf="@id/image_linkedin"
-        app:layout_constraintTop_toTopOf="@id/view_bottom_container" />
+        app:layout_constraintEnd_toStartOf="@id/imageButtonLinkedIn"
+        app:layout_constraintTop_toTopOf="@id/viewBottomContainer" />
 
     <ImageButton
-        android:id="@+id/image_linkedin"
+        android:id="@+id/imageButtonLinkedIn"
         style="@style/socialMediaLayout"
 
         android:background="@null"
         android:contentDescription="LinkedIn icon"
         android:src="@drawable/linkedin"
 
-        app:layout_constraintEnd_toEndOf="@id/view_bottom_container"
-        app:layout_constraintStart_toStartOf="@id/view_bottom_container"
-        app:layout_constraintTop_toTopOf="@id/view_bottom_container" />
+        app:layout_constraintEnd_toEndOf="@id/viewBottomContainer"
+        app:layout_constraintStart_toStartOf="@id/viewBottomContainer"
+        app:layout_constraintTop_toTopOf="@id/viewBottomContainer" />
 
     <ImageButton
         android:id="@+id/imageInstagram"
@@ -127,38 +128,38 @@
         android:contentDescription="Instagram icon"
         android:src="@drawable/instagram"
 
-        app:layout_constraintStart_toEndOf="@id/image_linkedin"
-        app:layout_constraintTop_toTopOf="@id/view_bottom_container" />
+        app:layout_constraintStart_toEndOf="@id/imageButtonLinkedIn"
+        app:layout_constraintTop_toTopOf="@id/viewBottomContainer" />
 
 
     <Button
-        android:id="@+id/button_editprofile"
-        style="@style/edit_profileLayout"
+        android:id="@+id/buttonEditProfile"
+        style="@style/buttonEditProfileStyle"
 
         android:background="@drawable/selector_xml_name"
         android:text="@string/edite_profile"
 
-        android:textAppearance="@style/edit_profileTextAppearance"
+        android:textAppearance="@style/buttonEditProfileTextAppearance"
         android:textColor="@color/buttonEditProfileTextColor"
         app:backgroundTint="@null"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_linkedin" />
+        app:layout_constraintTop_toBottomOf="@id/imageButtonLinkedIn" />
 
 
     <Button
-        android:id="@+id/button_viewmycontacts"
+        android:id="@+id/buttonViewMyContacts"
 
-        style="@style/view_my_contactsLayout"
+        style="@style/buttonViewMyContactsStyle"
 
         android:backgroundTint="@color/orange"
 
         android:text="@string/view_my_contacts"
-        android:textAppearance="@style/view_my_contactsTextAppearance"
+        android:textAppearance="@style/viewMyContactsTextAppearance"
         android:textColor="@color/white"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_editprofile" />
+        app:layout_constraintTop_toBottomOf="@id/buttonEditProfile" />
 </androidx.constraintlayout.widget.ConstraintLayout>
