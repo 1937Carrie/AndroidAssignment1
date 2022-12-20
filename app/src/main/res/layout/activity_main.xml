@@ -11,7 +11,7 @@
 
         style="@style/viewLayout"
 
-        android:background="@color/background"
+        android:background="@color/topViewColor"
 
         app:layout_constraintBottom_toTopOf="@id/view_bottom_container"
         app:layout_constraintEnd_toEndOf="parent"
