@@ -1,6 +1,5 @@
 package sdumchykov.task1
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -8,19 +7,18 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.Gravity
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
+import sdumchykov.task1.databinding.ActivitySignUpBinding
 
 
 class SignUpActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySignUpBinding
+
     private val watcher: TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(
-            s: CharSequence?,
-            start: Int,
-            count: Int,
-            after: Int
+            s: CharSequence?, start: Int, count: Int, after: Int
         ) {
 
         }
@@ -30,55 +28,50 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         override fun afterTextChanged(s: Editable?) {
-            val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
 
-            val lessThanEightSymbols = textInputPassword.text?.length!! < 8
-            val notContainsDigits = !textInputPassword.text?.contains(Regex("\\d"))!!
+            val lessThanEightSymbols = binding.textInputPassword.text?.length!! < 8
+            val notContainsDigits = !binding.textInputPassword.text?.contains(Regex("\\d"))!!
             val notContainsCharacters =
-                !textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
+                !binding.textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
 
             if (lessThanEightSymbols || notContainsDigits || notContainsCharacters) {
-                textInputPassword.error = "Enter valid password"
+                binding.textInputPassword.error = "Enter valid password"
             } else {
-                textInputPassword.error = null
+                binding.textInputPassword.error = null
             }
 
-            val textInputEmail = findViewById<TextInputEditText>(R.id.textInputEmail)
-
-            if (!textInputEmail.text?.contains(Regex(".+@.+\\..+"))!!) {
-                textInputEmail.error = "Enter valid email"
+            if (!binding.textInputEmail.text?.contains(Regex(".+@.+\\..+"))!!) {
+                binding.textInputEmail.error = "Enter valid email"
             } else {
-                textInputEmail.error = null
+                binding.textInputEmail.error = null
             }
 
-            val buttonRegister = findViewById<Button>(R.id.buttonRegister)
+            val emailError = binding.textInputEmail.error.isNullOrEmpty()
+            val passwordError = binding.textInputPassword.error.isNullOrEmpty()
 
-            val emailError = textInputEmail.error.isNullOrEmpty()
-            val passwordError = textInputPassword.error.isNullOrEmpty()
-
-            buttonRegister.isEnabled = emailError && passwordError
+            binding.buttonRegister.isEnabled = emailError && passwordError
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val buttonRegister = findViewById<Button>(R.id.buttonRegister)
-        buttonRegisterDisable(buttonRegister)
+        buttonRegisterDisable(binding.buttonRegister)
 
-        val textInputEmail = findViewById<TextInputEditText>(R.id.textInputEmail)
-        textInputAddTextChangedListener(textInputEmail)
-        val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
-        textInputAddTextChangedListener(textInputPassword)
+        textInputAddTextChangedListener(binding.textInputEmail)
+        textInputAddTextChangedListener(binding.textInputPassword)
 
-        buttonRegisterSetOnClickListener(buttonRegister, textInputEmail, textInputPassword)
+        buttonRegisterSetOnClickListener(
+            binding.buttonRegister, binding.textInputEmail, binding.textInputPassword
+        )
 
         startMainActivity()
 
         if (savedInstanceState != null) {
-            textInputEmail.setText(savedInstanceState.getString("email"))
-            textInputPassword.setText(savedInstanceState.getString("password"))
+            binding.textInputEmail.setText(savedInstanceState.getString("email"))
+            binding.textInputPassword.setText(savedInstanceState.getString("password"))
         }
     }
 
@@ -103,7 +96,7 @@ class SignUpActivity : AppCompatActivity() {
         textInputPassword: TextInputEditText
     ) {
         buttonRegister.setOnClickListener {
-            if (findViewById<CheckBox>(R.id.checkBoxRememberMe).isChecked) {
+            if (binding.checkBoxRememberMe.isChecked) {
                 val pref = getPreferences(MODE_PRIVATE)
                 val editor = pref.edit()
 
@@ -114,8 +107,13 @@ class SignUpActivity : AppCompatActivity() {
 
                 val toast = Toast.makeText(
                     applicationContext,
-                    "${pref.getString("Email", "Not found")}\n" +
-                            "${pref.getString("Password", "Not found")}", Toast.LENGTH_LONG
+                    "${pref.getString("Email", "Not found")}\n" + "${
+                        pref.getString(
+                            "Password",
+                            "Not found"
+                        )
+                    }",
+                    Toast.LENGTH_LONG
                 )
                 toast.setGravity(Gravity.TOP, 0, 140)
                 toast.show()
@@ -138,11 +136,8 @@ class SignUpActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
         super.onSaveInstanceState(outState, outPersistentState)
 
-        val textInputEmail = findViewById<TextInputEditText>(R.id.textInputEmail)
-        val textInputPassword = findViewById<TextInputEditText>(R.id.textInputPassword)
-
-        outState.putString("email", textInputEmail.text.toString())
-        outState.putString("password", textInputPassword.text.toString())
+        outState.putString("email", binding.textInputEmail.text.toString())
+        outState.putString("password", binding.textInputPassword.text.toString())
 
     }
 }
