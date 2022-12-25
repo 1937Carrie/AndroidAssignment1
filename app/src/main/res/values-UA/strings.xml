@@ -4,10 +4,10 @@
     <string name="name">Людмила Альвараденко</string>
     <string name="profession">Графічний дизайнер</string>
     <string name="address">Соборна 22</string>
-    <string name="edite_profile">Редагувати профіль</string>
+    <string name="edit_profile">Редагувати профіль</string>
     <string name="view_my_contacts">Переглянути контакти</string>
     <string name="let_s_get_a">Хто будеш?</string>
-    <string name="type_15">Заповніть профіль і переходьте до додатку!</string>
+    <string name="fill_out_the_profile">Заповніть профіль і переходьте до додатку!</string>
     <string name="email">E-mail</string>
     <string name="password">Пароль</string>
     <string name="remember_me">Запам\'ятати мене</string>

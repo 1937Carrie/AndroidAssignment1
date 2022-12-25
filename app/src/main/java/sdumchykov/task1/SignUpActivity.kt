@@ -8,13 +8,11 @@ import android.text.TextWatcher
 import android.view.Gravity
 import android.widget.Button
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import sdumchykov.task1.databinding.ActivitySignUpBinding
 
 
-class SignUpActivity : AppCompatActivity() {
-    private lateinit var binding: ActivitySignUpBinding
+class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding::inflate) {
 
     private val watcher: TextWatcher = object : TextWatcher {
         override fun beforeTextChanged(
@@ -28,9 +26,12 @@ class SignUpActivity : AppCompatActivity() {
             val notContainsDigits = !binding.textInputPassword.text?.contains(Regex("\\d"))!!
             val notContainsCharacters =
                 !binding.textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
-
+            /*TODO користувачу тре більше інфи про те, чому його пароль не валідний.
+               Додати символів, або цифр, або короктий. Фідбека нема.
+               Якщо з емейл є стандарти, то стандарт паролів у кожного софта може бути свій.*/
+            /*TODO усі стрінги у ресурси*/
             if (lessThanEightSymbols || notContainsDigits || notContainsCharacters) {
-                binding.textInputPassword.error = "Enter valid password"
+                binding.textInputPassword.error = "Min 8 symbols. Letters and digits are required"
             } else {
                 binding.textInputPassword.error = null
             }
@@ -54,9 +55,7 @@ class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignUpBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
+        /*TODO with(binding){} замість 1000 біндінгов :)*/
         buttonRegisterDisable(binding.buttonRegister)
 
         textInputAddTextChangedListener(binding.textInputEmail)
@@ -75,6 +74,8 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun startMainActivity() {
+        /*TODO pref what? :)*/
+        /*TODO можливо доречно зробити глобальну змінну, якщо ти її використовуєш декілька разів.*/
         val pref = getPreferences(MODE_PRIVATE)
 
         if (pref.getString("Email", "")?.length!! > 0) {
@@ -96,6 +97,7 @@ class SignUpActivity : AppCompatActivity() {
     ) {
         buttonRegister.setOnClickListener {
             if (binding.checkBoxRememberMe.isChecked) {
+                /*TODO pref what? :)*/
                 val pref = getPreferences(MODE_PRIVATE)
                 val editor = pref.edit()
 

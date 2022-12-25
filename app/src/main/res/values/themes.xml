@@ -2,15 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.MyProfile" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+<!--        <item name="colorPrimary">@color/purple_500</item>-->
+<!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+<!--        <item name="colorSecondary">@color/teal_200</item>-->
+<!--        <item name="colorSecondaryVariant">@color/teal_700</item>-->
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/steel_gray</item>
         <!-- Customize your theme here. -->
         <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
     </style>
@@ -34,29 +34,15 @@
         <item name="android:layout_height">0dp</item>
     </style>
 
-    <style name="textViewSettingsStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">16dp</item>
-        <item name="android:layout_marginTop">16dp</item>
-    </style>
-
     <style name="textViewSettingsTextAppearance">
         <item name="android:fontFamily">@font/opensans_semi_bold</item>
         <item name="android:textColor">@color/alabaster</item>
         <item name="android:textSize">24sp</item>
     </style>
 
-    <style name="imageViewPictureStyle">
-        <item name="android:layout_width">113dp</item>
-        <item name="android:layout_height">113dp</item>
-        <item name="android:layout_marginTop">79dp</item>
-    </style>
-
     <style name="textViewNameStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">24dp</item>
     </style>
 
     <style name="nameTextAppearance">
@@ -72,7 +58,7 @@
     </style>
 
     <style name="additionalTextAppearance">
-        <item name="android:textColor">@color/grey</item>
+        <item name="android:textColor">@color/gray</item>
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/opensans_regular</item>
     </style>
@@ -81,6 +67,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">52dp</item>
     </style>
 
     <style name="socialMediaLayout">
@@ -90,9 +77,8 @@
     </style>
 
     <style name="buttonEditProfileStyle">
-        <item name="android:layout_height">40dp</item>
-        <item name="android:layout_width">328dp</item>
-        <item name="android:layout_marginTop">95dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
     </style>
 
     <style name="buttonEditProfileTextAppearance">
@@ -103,12 +89,7 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="buttonViewMyContactsStyle">
-        <item name="android:layout_width">328dp</item>
-        <item name="android:layout_height">55dp</item>
-        <item name="android:layout_marginTop">6dp</item>
 
-    </style>
 
     <style name="viewMyContactsTextAppearance">
         <item name="android:textSize">16sp</item>
@@ -138,7 +119,7 @@
     <style name="textViewEmailTextAppearance">
         <item name="android:fontFamily">@font/opensans_semi_bold</item>
         <item name="android:lineSpacingExtra">-1sp</item>
-        <item name="android:textColor">@color/col_bdbdbd</item>
+        <item name="android:textColor">@color/silver</item>
         <item name="android:textSize">14sp</item>
     </style>
 
