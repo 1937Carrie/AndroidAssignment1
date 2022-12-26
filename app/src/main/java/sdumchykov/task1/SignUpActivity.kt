@@ -22,30 +22,29 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            val lessThanEightSymbols = binding.textInputPassword.text?.length!! < 8
-            val notContainsDigits = !binding.textInputPassword.text?.contains(Regex("\\d"))!!
+            with(binding){
+            val lessThanEightSymbols = textInputPassword.text?.length!! < 8
+            val notContainsDigits = !textInputPassword.text?.contains(Regex("\\d"))!!
             val notContainsCharacters =
-                !binding.textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
-            /*TODO користувачу тре більше інфи про те, чому його пароль не валідний.
-               Додати символів, або цифр, або короктий. Фідбека нема.
-               Якщо з емейл є стандарти, то стандарт паролів у кожного софта може бути свій.*/
-            /*TODO усі стрінги у ресурси*/
+                !textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
+
             if (lessThanEightSymbols || notContainsDigits || notContainsCharacters) {
-                binding.textInputPassword.error = "Min 8 symbols. Letters and digits are required"
+                textInputPassword.error =
+                    resources.getString(R.string.error_message_password)
             } else {
-                binding.textInputPassword.error = null
+                textInputPassword.error = null
             }
 
-            if (!binding.textInputEmail.text?.contains(Regex(".+@.+\\..+"))!!) {
-                binding.textInputEmail.error = "Enter valid email"
+            if (!textInputEmail.text?.contains(Regex(".+@.+\\..+"))!!) {
+                textInputEmail.error = resources.getString(R.string.error_message_email)
             } else {
-                binding.textInputEmail.error = null
+                textInputEmail.error = null
             }
 
-            val emailError = binding.textInputEmail.error.isNullOrEmpty()
-            val passwordError = binding.textInputPassword.error.isNullOrEmpty()
+            val emailError = textInputEmail.error.isNullOrEmpty()
+            val passwordError = textInputPassword.error.isNullOrEmpty()
 
-            binding.buttonRegister.isEnabled = emailError && passwordError
+            buttonRegister.isEnabled = emailError && passwordError}
         }
 
         override fun afterTextChanged(s: Editable?) {
@@ -55,35 +54,32 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /*TODO with(binding){} замість 1000 біндінгов :)*/
-        buttonRegisterDisable(binding.buttonRegister)
+        with(binding) {
+            buttonRegisterDisable(buttonRegister)
 
-        textInputAddTextChangedListener(binding.textInputEmail)
-        textInputAddTextChangedListener(binding.textInputPassword)
+            textInputAddTextChangedListener(textInputEmail)
+            textInputAddTextChangedListener(textInputPassword)
 
-        buttonRegisterSetOnClickListener(
-            binding.buttonRegister, binding.textInputEmail, binding.textInputPassword
-        )
+            buttonRegisterSetOnClickListener(buttonRegister, textInputEmail, textInputPassword)
 
-        startMainActivity()
+            startMainActivity()
 
-        if (savedInstanceState != null) {
-            binding.textInputEmail.setText(savedInstanceState.getString("email"))
-            binding.textInputPassword.setText(savedInstanceState.getString("password"))
+            if (savedInstanceState != null) {
+                textInputEmail.setText(savedInstanceState.getString("email"))
+                textInputPassword.setText(savedInstanceState.getString("password"))
+            }
         }
     }
 
     private fun startMainActivity() {
-        /*TODO pref what? :)*/
-        /*TODO можливо доречно зробити глобальну змінну, якщо ти її використовуєш декілька разів.*/
-        val pref = getPreferences(MODE_PRIVATE)
+        val cachedData = getPreferences(MODE_PRIVATE)
 
-        if (pref.getString("Email", "")?.length!! > 0) {
+        if (cachedData.getString("Email", "")?.length!! > 0) {
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
 
-            intent.putExtra("email", pref.getString("Email", ""))
+            intent.putExtra("email", cachedData.getString("Email", ""))
 
             startActivity(intent)
             finish()
@@ -97,9 +93,8 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
     ) {
         buttonRegister.setOnClickListener {
             if (binding.checkBoxRememberMe.isChecked) {
-                /*TODO pref what? :)*/
-                val pref = getPreferences(MODE_PRIVATE)
-                val editor = pref.edit()
+                val cachedData = getPreferences(MODE_PRIVATE)
+                val editor = cachedData.edit()
 
                 editor.putString("Email", textInputEmail.text.toString())
                 editor.putString("Password", textInputPassword.text.toString())
@@ -108,8 +103,8 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
 
                 val toast = Toast.makeText(
                     applicationContext,
-                    "${pref.getString("Email", "Not found")}\n" + "${
-                        pref.getString(
+                    "${cachedData.getString("Email", "Not found")}\n" + "${
+                        cachedData.getString(
                             "Password",
                             "Not found"
                         )

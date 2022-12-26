@@ -9,6 +9,9 @@
     <string name="address">Соборна 22</string>
     <string name="edit_profile">Редагувати профіль</string>
     <string name="view_my_contacts">Переглянути контакти</string>
+    <!-- Main activity service strings  -->
+    <string name="error_message_email">Введіть валідний email</string>
+    <string name="error_message_password">Мінімум 8 символів. Букви і літери обов\'язково</string>
     <!--  Sign up activity  -->
     <string name="let_s_get_a">Хто будеш?</string>
     <string name="fill_out_the_profile">Заповніть профіль і переходьте до додатку!</string>
@@ -25,4 +28,5 @@
     <string name="icon_facebook">Іконка Facebook</string>
     <string name="icon_linkedin">Іконка Linkedin</string>
     <string name="icon_instagram">Іконка Instagram</string>
+
 </resources>
