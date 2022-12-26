@@ -8,8 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutNord"
-
-        style="@style/viewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
 
         android:background="@color/steel_gray"
 
@@ -21,7 +21,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutSouth"
-        style="@style/viewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
         android:background="@color/mine_shaft"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,8 +93,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:fontFamily="@font/opensans_semi_bold"
         android:text="@string/settings"
-        android:textAppearance="@style/textViewSettingsTextAppearance"
+        android:textColor="@color/alabaster"
+        android:textSize="@dimen/text_24sp"
 
         app:layout_constraintBottom_toBottomOf="@id/guideline12"
         app:layout_constraintStart_toStartOf="@id/guideline"
@@ -103,7 +107,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
 
-        android:contentDescription="Profile image"
+        android:contentDescription="@string/profile_image"
         android:src="@drawable/tmp_rounded_image"
 
         app:layout_constraintBottom_toTopOf="@id/textViewName"
@@ -113,34 +117,36 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewName"
+        style="@style/widthHeightIsWrapContent"
 
-        style="@style/textViewNameStyle"
-
+        android:fontFamily="@font/opensans_semi_bold"
         android:text="@string/name"
-        android:textAppearance="@style/nameTextAppearance"
+        android:textColor="@color/alabaster"
+        android:textSize="@dimen/text_18sp"
 
+        app:layout_constraintBottom_toTopOf="@id/textViewProfession"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageViewPicture"
-        app:layout_constraintBottom_toTopOf="@id/textViewProfession"/>
+        app:layout_constraintTop_toBottomOf="@id/imageViewPicture" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewProfession"
-
-        style="@style/textViewProfessionStyle"
+        style="@style/widthHeightIsWrapContent"
+        android:layout_marginTop="@dimen/dimension_8dp"
 
         android:text="@string/profession"
         android:textAppearance="@style/additionalTextAppearance"
 
+        app:layout_constraintBottom_toTopOf="@id/textViewAddress"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewName"
-        app:layout_constraintBottom_toTopOf="@id/textViewAddress"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewName" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewAddress"
-
-        style="@style/textViewAddressStyle"
+        style="@style/widthHeightIsWrapContent"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:layout_marginBottom="@dimen/dimension_52dp"
 
         android:text="@string/address"
         android:textAppearance="@style/additionalTextAppearance"
@@ -156,35 +162,34 @@
         android:layout_height="wrap_content"
 
         app:constraint_referenced_ids="imageViewFacebook, imageButtonLinkedIn, imageInstagram"
-        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintBottom_toTopOf="@id/flow2"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
-        app:layout_constraintTop_toTopOf="@id/guideline4"
-        app:layout_constraintBottom_toTopOf="@id/flow2"/>
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/guideline4" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewFacebook"
-        style="@style/socialMediaLayout"
+        style="@style/widthHeightIsWrapContent"
 
-        android:layout_marginEnd="32dp"
-        android:contentDescription="Facebook icon"
+        android:contentDescription="@string/icon_facebook"
         android:src="@drawable/fb"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageButtonLinkedIn"
-        style="@style/socialMediaLayout"
+        style="@style/widthHeightIsWrapContent"
 
-        android:contentDescription="LinkedIn icon"
+        android:contentDescription="@string/icon_linkedin"
         android:src="@drawable/linkedin"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageInstagram"
-        style="@style/socialMediaLayout"
+        style="@style/widthHeightIsWrapContent"
 
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="@dimen/dimension_32dp"
 
-        android:contentDescription="Instagram icon"
+        android:contentDescription="@string/icon_instagram"
         android:src="@drawable/instagram"
         tools:ignore="MissingConstraints" />
 
@@ -195,37 +200,36 @@
 
         android:orientation="vertical"
         app:constraint_referenced_ids="buttonEditProfile, buttonViewMyContacts"
-        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:flow_verticalGap="@dimen/dimension_16dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@id/flow"
-        app:layout_constraintBottom_toTopOf="@id/guideline5"/>
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/flow" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonEditProfile"
-        style="@style/buttonEditProfileStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
 
         android:background="@drawable/selector_button_edit_profile"
         android:text="@string/edit_profile"
 
         android:textAppearance="@style/buttonEditProfileTextAppearance"
         android:textColor="@color/buttonEditProfileTextColor"
-        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
-        />
+        app:layout_constraintStart_toStartOf="@id/guideline" />
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonViewMyContacts"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
 
-        android:backgroundTint="@color/orange"
-        android:insetLeft="0dp"
+        android:background="@drawable/button_orange"
         android:text="@string/view_my_contacts"
         android:textAppearance="@style/viewMyContactsTextAppearance"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@id/guideline"
+
         app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

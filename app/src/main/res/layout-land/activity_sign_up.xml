@@ -56,7 +56,7 @@
             android:id="@+id/textViewFillOutProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/dimension_8dp"
 
             android:text="@string/fill_out_the_profile"
             android:textAlignment="center"
@@ -71,7 +71,7 @@
             android:id="@+id/textInputLayoutEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="@dimen/dimension_16dp"
 
             android:theme="@style/ThemeOverlay.App.TextInputLayout"
             app:errorEnabled="true"
@@ -98,7 +98,7 @@
             android:id="@+id/textInputLayoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="@dimen/dimension_16dp"
 
             android:theme="@style/ThemeOverlay.App.TextInputLayout"
             app:errorEnabled="true"
@@ -124,13 +124,13 @@
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/checkBoxRememberMe"
             style="@style/widthHeightIsWrapContent"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="@dimen/dimension_18dp"
 
             android:backgroundTint="@color/orange"
             android:button="@drawable/checkbox"
             android:buttonTint="@color/alabaster"
             android:checked="true"
-            android:paddingStart="8dp"
+            android:paddingStart="@dimen/dimension_8dp"
             android:text="@string/remember_me"
             android:textAppearance="@style/checkBoxRememberMeTextAppearance"
             android:textColor="@color/bombay"
@@ -144,9 +144,9 @@
         <Button
             android:id="@+id/buttonSignInWithGoogle"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="@dimen/dimension_40dp"
+            android:layout_marginHorizontal="@dimen/dimension_16dp"
+            android:layout_marginTop="@dimen/dimension_16dp"
 
             android:backgroundTint="@color/white"
             android:fontFamily="@font/opensans_semi_bold"
@@ -159,7 +159,7 @@
             android:textColor="@color/black"
             app:icon="@drawable/google_logo"
             app:iconGravity="textStart"
-            app:iconPadding="24dp"
+            app:iconPadding="@dimen/dimension_24dp"
             app:iconTint="@null"
 
             app:layout_constraintBottom_toTopOf="@id/textViewOr"
@@ -170,7 +170,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewOr"
             style="@style/widthHeightIsWrapContent"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/dimension_8dp"
 
             android:text="@string/or"
             android:textAlignment="center"
@@ -185,9 +185,9 @@
             android:id="@+id/buttonRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/dimension_16dp"
+            android:layout_marginTop="@dimen/dimension_8dp"
+            android:layout_marginEnd="@dimen/dimension_16dp"
 
             android:background="@drawable/selector_button_register"
             android:text="@string/register"
@@ -205,9 +205,9 @@
             android:id="@+id/textViewTermAndCondition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="@dimen/dimension_16dp"
+            android:layout_marginTop="@dimen/dimension_16dp"
+            android:layout_marginEnd="@dimen/dimension_16dp"
             android:fontFamily="@font/opensans_regular"
             android:text="@string/by_clicking"
 
@@ -223,12 +223,12 @@
             android:id="@+id/textViewAlreadyHaveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="@dimen/dimension_8dp"
+            android:layout_marginBottom="@dimen/dimension_16dp"
 
             android:fontFamily="@font/opensans_semi_bold"
             android:gravity="center"
-            android:text="@string/already_hav"
+            android:text="@string/already_have"
             android:textAlignment="center"
             android:textColor="@color/bombay"
             android:textSize="14sp"
@@ -243,7 +243,7 @@
             android:id="@+id/textViewSignIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="@dimen/dimension_12dp"
 
             android:fontFamily="@font/opensans_semi_bold"
             android:text="@string/sign_in"

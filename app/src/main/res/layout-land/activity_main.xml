@@ -75,8 +75,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:fontFamily="@font/opensans_semi_bold"
         android:text="@string/settings"
-        android:textAppearance="@style/textViewSettingsTextAppearance"
+        android:textColor="@color/alabaster"
+        android:textSize="@dimen/text_24sp"
 
         app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintStart_toStartOf="@id/guideline2"
@@ -86,9 +88,9 @@
         android:id="@+id/imageViewPicture"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="@dimen/dimension_24dp"
 
-        android:contentDescription="Profile image"
+        android:contentDescription="@string/profile_image"
 
         android:src="@drawable/tmp_rounded_image"
         app:layout_constraintBottom_toTopOf="@id/textViewName"
@@ -101,10 +103,12 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/dimension_8dp"
 
+        android:fontFamily="@font/opensans_semi_bold"
         android:text="@string/name"
-        android:textAppearance="@style/nameTextAppearance"
+        android:textColor="@color/alabaster"
+        android:textSize="@dimen/text_18sp"
 
         app:layout_constraintBottom_toTopOf="@id/textViewProfession"
         app:layout_constraintEnd_toEndOf="@id/constraintLayoutNord"
@@ -112,9 +116,10 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewProfession"
-        style="@style/textViewProfessionStyle"
+        style="@style/widthHeightIsWrapContent"
+        android:layout_marginTop="@dimen/dimension_8dp"
 
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/dimension_16dp"
 
         android:text="@string/profession"
         android:textAppearance="@style/additionalTextAppearance"
@@ -125,8 +130,9 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewAddress"
-
-        style="@style/textViewAddressStyle"
+        android:layout_marginTop="@dimen/dimension_16dp"
+        android:layout_marginBottom="@dimen/dimension_52dp"
+        style="@style/widthHeightIsWrapContent"
 
         android:text="@string/address"
         android:textAppearance="@style/additionalTextAppearance"
@@ -148,33 +154,33 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewFacebook"
 
-        style="@style/socialMediaLayout"
+        style="@style/widthHeightIsWrapContent"
 
-        android:contentDescription="Facebook icon"
+        android:contentDescription="@string/icon_facebook"
         android:src="@drawable/fb"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageButtonLinkedIn"
-        style="@style/socialMediaLayout"
+        style="@style/widthHeightIsWrapContent"
 
-        android:contentDescription="LinkedIn icon"
+        android:contentDescription="@string/icon_linkedin"
         android:src="@drawable/linkedin"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageInstagram"
-        style="@style/socialMediaLayout"
+        style="@style/widthHeightIsWrapContent"
 
-        android:contentDescription="Instagram icon"
+        android:contentDescription="@string/icon_instagram"
         android:src="@drawable/instagram"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonEditProfile"
         android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimension_16dp"
 
         android:background="@drawable/selector_button_edit_profile"
         android:text="@string/edit_profile"
@@ -192,10 +198,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        android:backgroundTint="@color/orange"
+        android:background="@drawable/button_orange"
         android:text="@string/view_my_contacts"
         android:textAppearance="@style/viewMyContactsTextAppearance"
-        android:textColor="@color/white"
 
         app:layout_constraintBottom_toTopOf="@id/guideline3"
         app:layout_constraintEnd_toEndOf="@id/guideline5"
