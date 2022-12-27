@@ -22,29 +22,30 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            with(binding){
-            val lessThanEightSymbols = textInputPassword.text?.length!! < 8
-            val notContainsDigits = !textInputPassword.text?.contains(Regex("\\d"))!!
-            val notContainsCharacters =
-                !textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
+            with(binding) {
+                val lessThanEightSymbols = textInputPassword.text?.length!! < 8
+                val notContainsDigits = !textInputPassword.text?.contains(Regex("\\d"))!!
+                val notContainsCharacters =
+                    !textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
 
-            if (lessThanEightSymbols || notContainsDigits || notContainsCharacters) {
-                textInputPassword.error =
-                    resources.getString(R.string.error_message_password)
-            } else {
-                textInputPassword.error = null
+                if (lessThanEightSymbols || notContainsDigits || notContainsCharacters) {
+                    textInputPassword.error =
+                        resources.getString(R.string.error_message_password)
+                } else {
+                    textInputPassword.error = null
+                }
+
+                if (!textInputEmail.text?.contains(Regex(".+@.+\\..+"))!!) {
+                    textInputEmail.error = resources.getString(R.string.error_message_email)
+                } else {
+                    textInputEmail.error = null
+                }
+
+                val emailError = textInputEmail.error.isNullOrEmpty()
+                val passwordError = textInputPassword.error.isNullOrEmpty()
+
+                buttonRegister.isEnabled = emailError && passwordError
             }
-
-            if (!textInputEmail.text?.contains(Regex(".+@.+\\..+"))!!) {
-                textInputEmail.error = resources.getString(R.string.error_message_email)
-            } else {
-                textInputEmail.error = null
-            }
-
-            val emailError = textInputEmail.error.isNullOrEmpty()
-            val passwordError = textInputPassword.error.isNullOrEmpty()
-
-            buttonRegister.isEnabled = emailError && passwordError}
         }
 
         override fun afterTextChanged(s: Editable?) {

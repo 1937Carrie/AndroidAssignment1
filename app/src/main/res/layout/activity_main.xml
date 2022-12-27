@@ -33,59 +33,59 @@
         app:layout_constraintVertical_weight="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.02" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.35" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.65" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/horizontalGuideline_activityMain_002"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.02" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline12"
+        android:id="@+id/horizontalGuideline_activityMain_008"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.98" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
+        android:id="@+id/horizontalGuideline_activityMain_050"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
+        android:id="@+id/horizontalGuideline_activityMain_098"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline_activityMain_002"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline_activityMain_035"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline_activityMain_065"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline_activityMain_098"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintGuide_percent="0.98" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -98,9 +98,9 @@
         android:textColor="@color/alabaster"
         android:textSize="@dimen/text_24sp"
 
-        app:layout_constraintBottom_toBottomOf="@id/guideline12"
-        app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/guideline2" />
+        app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline_activityMain_008"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline_activityMain_002"
+        app:layout_constraintTop_toTopOf="@id/horizontalGuideline_activityMain_002" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewPicture"
@@ -111,9 +111,9 @@
         android:src="@drawable/tmp_rounded_image"
 
         app:layout_constraintBottom_toTopOf="@id/textViewName"
-        app:layout_constraintEnd_toEndOf="@id/guideline11"
-        app:layout_constraintStart_toStartOf="@id/guideline10"
-        app:layout_constraintTop_toTopOf="@id/guideline12" />
+        app:layout_constraintEnd_toEndOf="@id/verticalGuideline_activityMain_065"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline_activityMain_035"
+        app:layout_constraintTop_toTopOf="@id/horizontalGuideline_activityMain_008" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textViewName"
@@ -151,7 +151,7 @@
         android:text="@string/address"
         android:textAppearance="@style/additionalTextAppearance"
 
-        app:layout_constraintBottom_toTopOf="@id/guideline4"
+        app:layout_constraintBottom_toTopOf="@id/horizontalGuideline_activityMain_050"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewProfession" />
@@ -163,9 +163,9 @@
 
         app:constraint_referenced_ids="imageViewFacebook, imageButtonLinkedIn, imageInstagram"
         app:layout_constraintBottom_toTopOf="@id/flow2"
-        app:layout_constraintEnd_toEndOf="@id/guideline3"
-        app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/guideline4" />
+        app:layout_constraintEnd_toEndOf="@id/verticalGuideline_activityMain_098"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline_activityMain_002"
+        app:layout_constraintTop_toTopOf="@id/horizontalGuideline_activityMain_050" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageViewFacebook"
@@ -201,9 +201,9 @@
         android:orientation="vertical"
         app:constraint_referenced_ids="buttonEditProfile, buttonViewMyContacts"
         app:flow_verticalGap="@dimen/dimension_16dp"
-        app:layout_constraintBottom_toTopOf="@id/guideline5"
-        app:layout_constraintEnd_toEndOf="@id/guideline3"
-        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintBottom_toTopOf="@id/horizontalGuideline_activityMain_098"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuideline_activityMain_098"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline_activityMain_002"
         app:layout_constraintTop_toBottomOf="@id/flow" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -216,8 +216,8 @@
 
         android:textAppearance="@style/buttonEditProfileTextAppearance"
         android:textColor="@color/buttonEditProfileTextColor"
-        app:layout_constraintEnd_toEndOf="@id/guideline3"
-        app:layout_constraintStart_toStartOf="@id/guideline" />
+        app:layout_constraintEnd_toEndOf="@id/verticalGuideline_activityMain_098"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline_activityMain_002" />
 
 
     <androidx.appcompat.widget.AppCompatButton
@@ -229,7 +229,7 @@
         android:text="@string/view_my_contacts"
         android:textAppearance="@style/viewMyContactsTextAppearance"
 
-        app:layout_constraintEnd_toEndOf="@id/guideline3"
-        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuideline_activityMain_098"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline_activityMain_002"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
