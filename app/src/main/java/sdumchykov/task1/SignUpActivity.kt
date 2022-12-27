@@ -15,22 +15,16 @@ import sdumchykov.task1.databinding.ActivitySignUpBinding
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding::inflate) {
 
     private val watcher: TextWatcher = object : TextWatcher {
-        override fun beforeTextChanged(
-            s: CharSequence?, start: Int, count: Int, after: Int
-        ) {
-
-        }
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             with(binding) {
                 val lessThanEightSymbols = textInputPassword.text?.length!! < 8
                 val notContainsDigits = !textInputPassword.text?.contains(Regex("\\d"))!!
-                val notContainsCharacters =
-                    !textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
+                val notContainsCharacters = !textInputPassword.text?.contains(Regex("[a-zA-Z]+"))!!
 
                 if (lessThanEightSymbols || notContainsDigits || notContainsCharacters) {
-                    textInputPassword.error =
-                        resources.getString(R.string.error_message_password)
+                    textInputPassword.error = resources.getString(R.string.error_message_password)
                 } else {
                     textInputPassword.error = null
                 }
@@ -48,9 +42,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
             }
         }
 
-        override fun afterTextChanged(s: Editable?) {
-
-        }
+        override fun afterTextChanged(s: Editable?) {}
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -103,14 +95,9 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
                 editor.apply()
 
                 val toast = Toast.makeText(
-                    applicationContext,
-                    "${cachedData.getString("Email", "Not found")}\n" + "${
-                        cachedData.getString(
-                            "Password",
-                            "Not found"
-                        )
-                    }",
-                    Toast.LENGTH_LONG
+                    applicationContext, "${cachedData.getString("Email", "Not found")}\n" + "${
+                        cachedData.getString("Password", "Not found")
+                    }", Toast.LENGTH_LONG
                 )
                 toast.setGravity(Gravity.TOP, 0, 140)
                 toast.show()
@@ -119,6 +106,10 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("email", textInputEmail.text.toString())
             startActivity(intent)
+
+            if (binding.checkBoxRememberMe.isChecked) {
+                finish()
+            }
         }
     }
 
@@ -135,6 +126,5 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(ActivitySignUpBinding
 
         outState.putString("email", binding.textInputEmail.text.toString())
         outState.putString("password", binding.textInputPassword.text.toString())
-
     }
 }
