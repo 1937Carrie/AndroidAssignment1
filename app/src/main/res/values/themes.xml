@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.MyProfile" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.MyProfile" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="android:navigationBarColor">@color/steel_gray</item>
         <!--        <item name="colorPrimary">@color/purple_500</item>-->
@@ -14,12 +14,10 @@
         <item name="android:statusBarColor">@color/steel_gray</item>
         <!-- Customize your theme here. -->
         <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
-    </style>
+        <item name="colorControlNormal">@color/silver</item>
+        <item name="colorControlActivated">@color/silver</item>
+        <item name="colorControlHighlight">@color/silver</item>
 
-    <style name="ThemeOverlay.App.TextInputLayout" parent="">
-        <item name="colorPrimary">@color/alabaster</item>
-        <item name="colorOnSurface">@color/alabaster</item>
-        <item name="colorError">@android:color/holo_red_dark</item>
     </style>
 
     <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
